@@ -90,6 +90,15 @@ main{
     line-height: 1.6;
 }
 
+/* Contenedor 3 */
+.c3{
+    color: white;
+    width: 45%;
+    min-width: 300px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
 /* FOOTER */
 footer{
     background-color: rgb(227, 65, 11);
