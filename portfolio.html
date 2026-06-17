@@ -1,343 +1,400 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Franco Ortiz</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pedro Pimentel — Portfolio</title>
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-        body{
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+  <!-- Font Awesome (íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-        /* HEADER */
-        header{
-            background-color: rgb(227, 65, 11);
-            position: relative;
-            padding: 20px;
-        }
-
-        header h1{
-            text-align: center;
-            color: white;
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        header img{
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            position: absolute;
-            left: 20px;
-            top: 15px;
-            object-fit: cover;
-        }
-
-        /* NAV */
-        nav{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        nav a{
-            text-decoration: none;
-            color: white;
-            padding: 8px 12px;
-            transition: 0.3s;
-            font-size: 20px;
-        }
-
-        nav a:hover{
-            color: black;
-        }
-
-        /* MAIN */
-        main{
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        h2{
-            text-align: center;
-            margin: 30px 0;
-            color: rgb(227, 65, 11);
-        }
-
-        section{
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        section h3{
-            margin-bottom: 10px;
-            color: rgb(227, 65, 11);
-        }
-
-        /* SOBRE MI */
-        #acerca{
-            text-align: center;
-        }
-
-        #acerca a{
-            display: inline-block;
-            margin: 10px;
-            text-decoration: none;
-            background-color: rgb(227, 65, 11);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        #acerca a:hover{
-            background-color: rgb(180, 50, 8);
-        }
-
-        /* PROYECTOS */
-        .proyecto{
-            text-align: center;
-        }
-
-        .proyecto img{
-            width: 100%;
-            max-width: 400px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        /* FORMULARIO */
-        form{
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        form label{
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-
-        form input,
-        form select{
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button{
-            background-color: rgb(227, 65, 11);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover{
-            background-color: rgb(180, 50, 8);
-        }
-
-        /* FOOTER */
-        footer{
-            background-color: rgb(227, 65, 11);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer img{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin: 10px;
-        }
-
-        footer p{
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 900px){
-
-            header img{
-                position: static;
-                display: block;
-                margin: auto;
-            }
-
-            header h1{
-                font-size: 32px;
-                margin-top: 15px;
-            }
-        }
-
-        @media (max-width: 600px){
-
-            header{
-                text-align: center;
-            }
-
-            header h1{
-                font-size: 26px;
-            }
-
-            nav{
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a{
-                font-size: 18px;
-            }
-
-            footer p{
-                font-size: 18px;
-            }
-        }
-    </style>
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style1.css"/>
 </head>
 <body>
 
-    <header>
-        <img src="https://www.eldiarioweb.com/wp-content/uploads/2024/03/AUTOMOVILISMO-FRANCO-COLAPINTO-e1709397782208.jpg" alt="Foto de perfil">
+<!-- ===================================================
+     NAVBAR
+==================================================== -->
+<nav id="navbar">
+  <div class="container">
+    <a href="#hero" class="nav-logo">PP<span>.</span></a>
 
-        <h1>Portfolio Franco Ortiz</h1>
+    <!-- Links desktop -->
+    <ul class="nav-links">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#acerca">Acerca de mí</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <!-- Botón hamburguesa (mobile) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 
-    <main>
+  <!-- Menú desplegable mobile -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="#about"    onclick="closeMenu()">Sobre mí</a>
+    <a href="#skills"   onclick="closeMenu()">Habilidades</a>
+    <a href="#projects" onclick="closeMenu()">Proyectos</a>
+    <a href="#contact"  onclick="closeMenu()">Contacto</a>
+  </div>
+</nav>
 
-        <h2>Sobre mí</h2>
 
-        <section id="acerca">
-            <h2>Hola, soy Franco Ortiz</h2>
-            <h4>Desarrollador Web Full Stack</h4>
-            <p>Apasionado por el desarrollo de sistemas personalizados para empresas.</p>
+<!-- ===================================================
+     HERO
+==================================================== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
 
-            <a href="#proyectos">Ver proyectos</a>
-            <a href="#contacto">Contáctame</a>
-        </section>
+      <!-- Badge superior -->
+      <div class="hero-eyebrow">
+        <i class="fas fa-circle"></i> Disponible para colaborar
+      </div>
 
-        <h2>Habilidades</h2>
+      <!-- Nombre -->
+      <h1 class="hero-name">
+        Pedro<br><span class="highlight">Pimentel.</span>
+      </h1>
 
-        <section id="habilidades">
-            <h3>Frontend</h3>
-            <p>HTML, CSS y JavaScript.</p>
-            <p>Framework Vue.js.</p>
-        </section>
+      <!-- Texto animado -->
+      <p class="hero-role">
+        <span id="typed"></span><span class="typed-cursor">|</span>
+      </p>
 
-        <section>
-            <h3>Backend</h3>
-            <p>PHP y Node.js.</p>
-            <p>Framework Laravel.</p>
-        </section>
+      <!-- Descripción breve -->
+      <p class="hero-desc">
+        Estudiante de programación apasionado por la tecnología, el desarrollo
+        de software y la criptografía. Con sede en Córdoba, Argentina.
+      </p>
 
-        <section>
-            <h3>Herramientas</h3>
-            <p>GitHub, Git y MySQL.</p>
-        </section>
+      <!-- Botones CTA -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-folder-open"></i> Ver proyectos
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-paper-plane"></i> Contactarme
+        </a>
+      </div>
 
-        <h2 id="proyectos">Proyectos</h2>
+    </div>
+  </div>
 
-        <section class="proyecto">
-            <img src="https://www.facilvirtual.com/images/ml/caja.jpg" alt="Proyecto Kiosco">
+  <!-- Indicador de scroll -->
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-            <h3>Sistema de Gestión para Kiosco</h3>
 
-            <p>Proyecto diseñado para controlar el stock, ventas y productos de un kiosco.</p>
-        </section>
+<!-- ===================================================
+     SOBRE MÍ
+==================================================== -->
+<section id="about" class="section">
+  <div class="container">
 
-        <section class="proyecto">
-            <img src="https://loyverse.com/sites/all/themes/loyversecom/images/business/restaurants/br/main-banner-restaurants.webp" alt="Proyecto Restaurante">
+    <div class="section-label reveal">
+      <i class="fas fa-user-circle"></i> &nbsp;Sobre mí
+    </div>
 
-            <h3>Sistema de Gestión para Restaurante</h3>
+    <div class="about-grid">
 
-            <p>Proyecto diseñado para administrar stock, pedidos y ventas de un restaurante.</p>
-        </section>
+      <!-- Avatar / foto -->
+      <div class="about-avatar-wrap reveal-left">
+        <div style="position:relative;">
+          <div class="about-avatar">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="about-deco"></div>
+          <div class="about-deco2"></div>
+        </div>
+      </div>
 
-        <h2>Contáctame</h2>
+      <!-- Texto e info -->
+      <div class="reveal-right">
+        <h2 class="section-title">Hola, soy <span>Pedro</span> 👋</h2>
 
-        <form id="contacto">
+        <p style="color:var(--muted); font-size:1rem; font-weight:300; line-height:1.9; margin-bottom:1.2rem;">
+          Tengo 16 años y estoy cursando programación en un colegio técnico en
+          Córdoba Capital. Me encanta crear cosas con código, aprender constantemente
+          y explorar cómo la tecnología puede resolver problemas reales.
+        </p>
+        <p style="color:var(--muted); font-size:1rem; font-weight:300; line-height:1.9; margin-bottom:1.6rem;">
+          Más allá del teclado, me apasiona la fotografía, disfruto jugar
+          Fortnite y practico básquet. Creo que la curiosidad y la constancia
+          son las mejores herramientas de cualquier programador.
+        </p>
 
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Nombre">
+        <!-- Datos personales -->
+        <ul class="about-info">
+          <li>
+            <i class="fas fa-birthday-cake"></i>
+            <span><strong>21 de julio, 2008</strong> — Córdoba, Argentina</span>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>Córdoba Capital</strong>, Argentina</span>
+          </li>
+          <li>
+            <i class="fas fa-graduation-cap"></i>
+            <span>Estudiante de <strong>Programación</strong> — Colegio Técnico</span>
+          </li>
+        </ul>
 
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" placeholder="Apellido">
+        <!-- Hobbies / chips -->
+        <div class="about-tags">
+          <span class="tag"><i class="fas fa-camera"></i> Fotografía</span>
+          <span class="tag"><i class="fas fa-gamepad"></i> Videojuegos</span>
+          <span class="tag"><i class="fas fa-basketball-ball"></i> Básquet</span>
+          <span class="tag"><i class="fas fa-microchip"></i> Tecnología</span>
+          <span class="tag"><i class="fas fa-book-open"></i> Aprendizaje continuo</span>
+        </div>
+      </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="correo@ejemplo.com">
+    </div>
+  </div>
+</section>
 
-            <label for="puesto">Puesto</label>
-            <select id="puesto">
-                <option>Elija una opción</option>
-                <option>Desarrollador Frontend</option>
-                <option>Desarrollador Backend</option>
-                <option>Líder de Equipo</option>
-                <option>Senior Python</option>
-            </select>
 
-           <input type="button" value="Guardar" onclick="guardar()">
+<!-- ===================================================
+     HABILIDADES
+==================================================== -->
+<section id="skills" class="section">
+  <div class="container">
+
+    <div class="skills-header">
+      <div class="section-label reveal"><i class="fas fa-terminal"></i> &nbsp;Habilidades</div>
+      <h2 class="section-title reveal">Stack <span>tecnológico</span></h2>
+      <p class="section-sub reveal">Lenguajes y tecnologías que utilizo para construir proyectos reales.</p>
+    </div>
+
+    <!-- data-bar = porcentaje de la barra animada (leído desde main.js) -->
+    <div class="skills-grid">
+
+      <div class="skill-card reveal" data-bar="85">
+        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+        <div>
+          <div class="skill-name">HTML</div>
+          <div class="skill-bar-wrap"><div class="skill-bar"></div></div>
+          <div class="skill-level">Avanzado</div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-bar="78" style="transition-delay:.08s">
+        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+        <div>
+          <div class="skill-name">CSS</div>
+          <div class="skill-bar-wrap"><div class="skill-bar"></div></div>
+          <div class="skill-level">Avanzado</div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-bar="70" style="transition-delay:.16s">
+        <div class="skill-icon"><i class="fab fa-js"></i></div>
+        <div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar-wrap"><div class="skill-bar"></div></div>
+          <div class="skill-level">Intermedio</div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-bar="75" style="transition-delay:.24s">
+        <div class="skill-icon"><i class="fab fa-python"></i></div>
+        <div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar-wrap"><div class="skill-bar"></div></div>
+          <div class="skill-level">Intermedio</div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" data-bar="60" style="transition-delay:.32s">
+        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+        <div>
+          <div class="skill-name">Flet</div>
+          <div class="skill-bar-wrap"><div class="skill-bar"></div></div>
+          <div class="skill-level">En aprendizaje</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     PROYECTOS
+==================================================== -->
+<section id="projects" class="section">
+  <div class="container">
+
+    <div class="section-label reveal"><i class="fas fa-rocket"></i> &nbsp;Proyectos</div>
+    <h2 class="section-title reveal">Lo que he <span>construido</span></h2>
+    <p class="section-sub reveal">Proyectos personales que reflejan mi pasión por el desarrollo de software.</p>
+
+    <div class="projects-grid">
+
+      <!-- Proyecto: Encripted -->
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-lock"></i></div>
+          <div class="project-links">
+            <a href="#" class="project-link" title="Código fuente">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-badge">Proyecto principal</span>
+          <h3 class="project-title">Encripted</h3>
+          <p class="project-desc">
+            Aplicación de encriptación y desencriptación de archivos, creada
+            para mejorar la seguridad de la información personal. Un proyecto
+            de aprendizaje profundo sobre criptografía y desarrollo de software
+            con Python y Flet.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flet</span>
+            <span class="tech-tag">Criptografía</span>
+            <span class="tech-tag">Desktop App</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder -->
+      <div class="project-card placeholder reveal" style="transition-delay:.1s">
+        <div class="placeholder-inner">
+          <i class="fas fa-plus-circle"></i>
+          <p>Próximo proyecto<br><small>En desarrollo...</small></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     CONTACTO
+==================================================== -->
+<section id="contact" class="section">
+  <div class="container">
+
+    <div class="section-label reveal"><i class="fas fa-envelope"></i> &nbsp;Contacto</div>
+    <h2 class="section-title reveal">Hablemos <span>juntos</span></h2>
+    <p class="section-sub reveal">¿Tenés un proyecto o querés colaborar? No dudes en escribirme.</p>
+
+    <div class="contact-wrap">
+
+      <!-- Info -->
+      <div class="reveal-left">
+
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-label">Ubicación</div>
+            <div class="contact-value">Córdoba Capital, Argentina</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <div class="contact-label">Institución</div>
+            <div class="contact-value">Colegio Técnico — Programación</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <div class="contact-label">Idiomas</div>
+            <div class="contact-value">Español</div>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div style="margin-top:2rem;">
+          <p style="color:var(--muted); font-size:.9rem; margin-bottom:1rem;">Seguime en redes</p>
+          <div style="display:flex; gap:.7rem;">
+            <a href="#" class="footer-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="footer-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulario -->
+      <div class="reveal-right">
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Nombre</label>
+              <input type="text" id="fname" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" placeholder="tu@email.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fsubject">Asunto</label>
+            <input type="text" id="fsubject" placeholder="¿De qué se trata?" />
+          </div>
+
+          <div class="form-group">
+            <label for="fmsg">Mensaje</label>
+            <textarea id="fmsg" placeholder="Escribí tu mensaje aquí..." required></textarea>
+          </div>
+
+          <div id="form-msg"></div>
+
+          <div class="form-submit-wrap">
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-paper-plane"></i> Enviar mensaje
+            </button>
+          </div>
 
         </form>
+      </div>
 
-    </main>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>Página de prueba diseñada por Programación 3</p>
 
-        <a href="https://web.whatsapp.com/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-        </a>
+<!-- ===================================================
+     FOOTER
+==================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Pedro<span>.</span></div>
+    <div class="footer-links">
+      <a href="#" class="footer-link"><i class="fab fa-github"></i></a>
+      <a href="#" class="footer-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="footer-link"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© 2024 Pedro Jose Pimentel Quiroz — Córdoba, Argentina</p>
+  </div>
+</footer>
 
-        <a href="https://www.youtube.com/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-        </a>
 
-        
-        <a href="https://accounts.google.com/v3/signin/accountchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&dsh=S506320881%3A1781124295148119&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AcDsRvy31LVk9o7eAaGjHqaTWOcwmRwcvB5M3M22MVKtePWbTRrAd3KDx4E3HqlbhZts23-8-N--4A" target="_blank">
-            <img src="https://w7.pngwing.com/pngs/758/665/png-transparent-new-logo-gmail-google-new-logos-icon.png">
-        </a>
-    </footer>
+<!-- Script al final del body para mejor rendimiento -->
+<script src="main.js"></script>
 
 </body>
 </html>
-
-<script>
-function guardar(){
-   alert("Gracias por su mensaje");
-   
-}
-</script>
